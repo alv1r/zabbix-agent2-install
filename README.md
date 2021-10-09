@@ -14,7 +14,7 @@
 
 Пример запуска:
 
-    `zabbix-agent2-install.sh server`
+    zabbix-agent2-install.sh server
 
 где `server` - IP Zabbix сервера.
 
