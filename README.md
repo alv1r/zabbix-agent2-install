@@ -18,7 +18,7 @@
 
 где `server` - IP Zabbix сервера.
 
-
+Настройки:
 
     PidFile=/var/run/zabbix/zabbix_agentd2.pid
     LogFile=/var/log/zabbix/zabbix_agentd2.log
