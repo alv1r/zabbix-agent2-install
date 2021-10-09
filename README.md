@@ -14,6 +14,16 @@
 
 Пример запуска:
 
-    zabbix-agent2-install.sh server
+    `zabbix-agent2-install.sh server`
 
 где `server` - IP Zabbix сервера.
+
+
+`PidFile=/var/run/zabbix/zabbix_agentd2.pid
+LogFile=/var/log/zabbix/zabbix_agentd2.log
+LogFileSize=5
+Server="$SERVER"
+ServerActive="$SERVER"
+Hostname="$HOSTNAME"
+AllowKey=system.run[*]
+Include=/etc/zabbix/zabbix_agent2.d/*.conf`
