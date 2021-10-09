@@ -20,10 +20,17 @@
 
 
 `PidFile=/var/run/zabbix/zabbix_agentd2.pid
+
 LogFile=/var/log/zabbix/zabbix_agentd2.log
+
 LogFileSize=5
-Server="$SERVER"
-ServerActive="$SERVER"
-Hostname="$HOSTNAME"
+
+Server=
+
+ServerActive=
+
+Hostname=
+
 AllowKey=system.run[*]
+
 Include=/etc/zabbix/zabbix_agent2.d/*.conf`
