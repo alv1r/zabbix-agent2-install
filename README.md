@@ -19,11 +19,12 @@
 где `server` - IP Zabbix сервера.
 
 
-`PidFile=/var/run/zabbix/zabbix_agentd2.pid
-LogFile=/var/log/zabbix/zabbix_agentd2.log
-LogFileSize=5
-Server=
-ServerActive=
-Hostname=
-AllowKey=system.run[*]
-Include=/etc/zabbix/zabbix_agent2.d/*.conf`
+
+    PidFile=/var/run/zabbix/zabbix_agentd2.pid
+    LogFile=/var/log/zabbix/zabbix_agentd2.log
+    LogFileSize=5
+    Server=
+    ServerActive=
+    Hostname=
+    AllowKey=system.run[*]
+    Include=/etc/zabbix/zabbix_agent2.d/*.conf
