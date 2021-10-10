@@ -24,5 +24,6 @@
     Server=
     ServerActive=
     Hostname=
+	HostMetadataItem=system.uname
     AllowKey=system.run[*]
     Include=/etc/zabbix/zabbix_agent2.d/*.conf
