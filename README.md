@@ -18,7 +18,7 @@
 
     zabbix-agent2-install.sh server
 
-где `server` - IP Zabbix сервера.
+где `server` - IP или FQDN Zabbix сервера.
 
 Настройки:
 
