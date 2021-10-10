@@ -1,6 +1,6 @@
 
 # zabbix-agent2-install
-Скрипт для полуавтоматической установки zabbix-agent2 на OS Ubuntu 20.04.3 LTS (Focal Fossa).
+Скрипт для полуавтоматической установки zabbix-agent2 5.0 LTS на OS Ubuntu 20.04.3 LTS (Focal Fossa).
 
 Что делает скрипт?
 
