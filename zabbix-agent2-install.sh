@@ -42,7 +42,7 @@ if [[ "$OSVERSION" =~ ^(bionic|focal)$ ]]; then
 # Save rules and reload firewall
   iptables-save > /etc/iptables.v4
   iptables-restore < /etc/iptables.v4
-# Restart service
+# Start service
   service zabbix-agent2 start
 elif [[ "$OSVERSION" =~ ^(stretch|buster)$ ]]; then
 # Installing Zabbix Agent 2 on Debian 9/10
