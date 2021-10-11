@@ -69,8 +69,6 @@ elif [[ "$OSVERSION" =~ ^(stretch|buster)$ ]]; then
   service zabbix-agent2 restart
 else
   echo "$OSVERSION is not supported"
-<<<<<<< HEAD
+
 fi
-=======
-fi
->>>>>>> bb2d899443b6cafe9d5eacb5fe6f882dc9628e25
+
