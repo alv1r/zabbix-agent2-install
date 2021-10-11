@@ -6,24 +6,28 @@ fi
 echo "Installing Zabbix agent2 v5.0 LTS"
 # Get hostname
 HOSTNAME=$(hostname -s)
-wget --quiet https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
-dpkg -i zabbix-release_5.0-1+focal_all.deb
-apt-get update -y
-rm zabbix-release_5.0-1+focal_all.deb
-apt-get install zabbix-agent2 -y
-echo "PidFile=/var/run/zabbix/zabbix_agentd2.pid
-LogFile=/var/log/zabbix/zabbix_agentd2.log
-LogFileSize=5
-Server="$1"
-ServerActive="$1"
-Hostname="$HOSTNAME"
-AllowKey=system.run[*]
-Include=/etc/zabbix/zabbix_agent2.d/*.conf" > /etc/zabbix/zabbix_agentd2.conf
+if [[ "$OSVERSION" =~ ^(bionic|focal|)$ ]]; then
+  wget --quiet https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+"$OSVERSION"_all.deb
+  dpkg -i zabbix-release_5.0-1+focal_all.deb
+  apt-get update -y
+  rm zabbix-release_5.0-1+"$OSVERSION"_all.deb
+  apt-get install zabbix-agent2 -y
+  echo "PidFile=/var/run/zabbix/zabbix_agentd2.pid
+  LogFile=/var/log/zabbix/zabbix_agentd2.log
+  LogFileSize=5
+  Server="$1"
+  ServerActive="$1"
+  Hostname="$HOSTNAME"
+  HostMetadataItem=system.uname
+  AllowKey=system.run[*]
+  Include=/etc/zabbix/zabbix_agent2.d/*.conf" > /etc/zabbix/zabbix_agentd2.conf
 # Open ports
-iptables -A INPUT -p tcp --dport 10050 -j ACCEPT
+  iptables -A INPUT -p tcp --dport 10050 -j ACCEPT
 # Save rules and reload firewall
-iptables-save > /etc/iptables.v4
-iptables-restore < /etc/iptables.v4
+  iptables-save > /etc/iptables.v4
+  iptables-restore < /etc/iptables.v4
 # Restart service
-service zabbix-agent2 restart
-echo "Done"
+  service zabbix-agent2 restart
+else
+    echo "$OSVERSION is not supported"
+fi
