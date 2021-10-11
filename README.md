@@ -1,6 +1,6 @@
 
 # zabbix-agent2-install
-Скрипт для полуавтоматической установки [Zabbix agent 2 5.0 LTS](https://www.zabbix.com/documentation/5.0/ru/manual/concepts/agent2) на Ubuntu 18.04.5 LTS (Bionic Beaver) и Ubuntu 20.04 LTS (Focal Fossa).
+Скрипт для полуавтоматической установки [Zabbix agent 2 5.0 LTS](https://www.zabbix.com/documentation/5.0/ru/manual/concepts/agent2) на Ubuntu 18.04.5/20.04 LTS и Debian 9/10
 
 Zabbix agent 2 - новое поколение Zabbix агента, его можно использовать в качестве замены Zabbix агента. Zabbix агент 2 разработан для:
 
