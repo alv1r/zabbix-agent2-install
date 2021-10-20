@@ -18,7 +18,7 @@ HOSTNAME=$(hostname -s)
 OSVERSION=$(lsb_release -sc)
 if [[ "$OSVERSION" =~ ^(bionic|focal)$ ]]; then
 # Installing Zabbix Agent 2 on Ubuntu 18/20
-  wget --quiet https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+"$OSVERSION"_all.deb
+  wget --no-check-certificate https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+"$OSVERSION"_all.deb
   dpkg -i zabbix-release_5.0-1+"$OSVERSION"_all.deb
   apt-get update -y
   rm zabbix-release_5.0-1+"$OSVERSION"_all.deb
@@ -46,7 +46,7 @@ if [[ "$OSVERSION" =~ ^(bionic|focal)$ ]]; then
   service zabbix-agent2 start
 elif [[ "$OSVERSION" =~ ^(stretch|buster)$ ]]; then
 # Installing Zabbix Agent 2 on Debian 9/10
-  wget --quiet https://repo.zabbix.com/zabbix/5.0/debian/pool/main/z/zabbix-release/zabbix-release_5.0-1+"$OSVERSION"_all.deb
+  wget --no-check-certificate https://repo.zabbix.com/zabbix/5.0/debian/pool/main/z/zabbix-release/zabbix-release_5.0-1+"$OSVERSION"_all.deb
   dpkg -i zabbix-release_5.0-1+"$OSVERSION"_all.deb
   apt-get update -y
   rm zabbix-release_5.0-1+"$OSVERSION"_all.deb
