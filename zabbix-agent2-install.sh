@@ -36,7 +36,7 @@ if [[ "$OSVERSION" =~ ^(bionic|focal)$ ]]; then
   Hostname="$HOSTNAME"
   HostMetadataItem=system.uname
   AllowKey=system.run[*]
-  Include=/etc/zabbix/zabbix_agent2.d/*.conf" > /etc/zabbix/zabbix_agentd2.conf
+  Include=/etc/zabbix/zabbix_agent2.d/*.conf" > /etc/zabbix/zabbix_agent2.conf
 # Open ports
   iptables -A INPUT -p tcp --dport 10050 -j ACCEPT
 # Save rules and reload firewall
